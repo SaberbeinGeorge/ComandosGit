@@ -1,0 +1,175 @@
+NOTA: 
+El símbolo de "+" no va, solo lo pongo qué atributo se le agrega después
+
+
+
+AFREGAR UN ARCHIVO A GIT:
+git init -----------------------------------Se activa el comienzo de subir la carpeta
+git add + archivo --------------------------Agrega al documento
+git commit -m "mensaje" --------------------Se agrega un mensaje sobre lo que se cambio (obligatorio)
+
+git add + archivo
+git commit --amend -------------------------sirve para evitar crear otro commit y utilizar el anterior
+
+
+git remote add origin 
+git add origin master + link ---------------Subir a GitHub
+git pull origin master ---------------------Trae todos los cambios agregados desde gitHub
+git push origin master ---------------------Envia tus archivos al master en github
+
+
+git checkout +(codigo commit)+ (archivo que se desea regresar) 
+ejemplo: git checkout 78jendfkfjhddofjffldjdmmckgj historia.txt 
+y para regresar :
+git checkout master historia.txt
+
+
+
+OPCIONES:
+git status ---------------------------------Muestra el estado de los archivos de la carpeta
+git show -----------------------------------Muestra los cambios que se han hecho 
+git log ------------------------------------Muestra todos los commits realizados
+dir ----------------------------------------Abrir
+pwd ----------------------------------------Donde estoy
+esc + i ------------------------------------Puedes empezar a escribir el commit (si es que usaste el comando "git commit")
+esc + shift + z + z ------------------------Se guarda un archivo con bin 
+git shortlog -------------------------------Cuantos commits a hecho cada miembro
+git shortlog -sn ---------------------------Personas que han hecho ciertos commits
+git shortlog -sn --all ---------------------Muestra todos los commits (incluso los borrados)
+git shortlog -sn --all --no-merges ---------Muestra todos los commits execto los merge
+git config --global alias.'nombre' "comanado(sin git)"
+
+
+
+
+
+BLAME:
+git blame + 'archivo.' ---------------------Muestra quien hizo que cambio al archivo
+git blame -c + 'archivo.' ------------------Lo muestra mas bonito
+git blame + 'archivo.' +L12,53 -------------Muestra quien hizo los cambios especificamente en esas lineas
+git blame -c + 'archivo.' +L12,53 ----------Lo muestra mas bonito
+git 'comando' --help -----------------------Muestra como funcin el comando en una pagina web
+
+
+
+
+
+EXTRAS:
+git log + archivo --------------------------Muestra todos los commits realizados al archivo
+git reset + version --soft -----------------Permite volver a una versión anterior (Borramos todo el historial y los registros de Git pero guardamos los cambios que tengamos en Staging, así podemos aplicar las últimas actualizaciones a un nuevo commit.)
+                    --hard -----------------(Borra todo. Todo todito, absolutamente todo. Toda la información de los commits y del área de staging se borra del historial.)
+git diff + version1 + version2 -------------Se compara la versión 1 y 2 entre sí
+git checkout + master + archivo ------------Muestra cómo era el archivo el la versión señalada
+git checkout + version + archivo -----------Muestra cómo era el archivo el la versión señalada
+git rm --cached ----------------------------Se cancela la subida (Elimina los archivos de nuestro repositorio local y del área de staging,)
+git rm --force -----------------------------Elimina los archivos de Git y del disco duro. Git siempre guarda todo, por lo que podemos acceder al registro de la existencia de los archivos, de modo que podremos recuperarlos si es necesario (pero debemos usar comandos más avanzados).
+. ------------------------------------------Hace referencia a todas la carpeta
+code + archivo -----------------------------Se abre Visual Studio Code en el archivo marcado
+alias + VARIABLE="comando"------------------Genera variables con comandos para evitar escribir un mega codigo
+git reset HEAD------------------------------Este es el comando para sacar archivos del área de staging. No para borrarlos ni nada de eso, solo para que los últimos cambios de estos archivos no se envíen al último commit, a menos que cambiemos de opinión y los incluyamos de nuevo en staging con git add, por supuesto.
+
+
+
+
+CHERRY-PICK:
+Mala practica
+git cherry-PICK 'hash del cambio'-----------Trae un commit especifico de un lado
+
+
+
+
+
+CLEAN:
+git clean --dry-run ------------------------Dice todos las copias que estn hechas por error que se van a borrar(antes de hacer push)
+git clean -f -------------------------------Se borran (confirmacion)
+
+
+
+
+STASH:
+git stash ----------------------------------Regresa al todo a antes del primer cambio (control + z)
+git stash pop ------------------------------Vuelve los cambios 
+git stash drop -----------------------------Borra los cambios
+git stash list -----------------------------Muestra los cambios stash-eados
+git stash branch + 'nombreRama' ------------Se crea una rama con el cambio de stash
+
+
+
+
+RAMAS:
+git push -u origin + 'rama' -----------------------Sube la rama a github
+git branch + 'nombre de la rama creada' -----------Se genera una rama con el nombre seleccionado
+git checkout + 'rama' -----------------------------Se puede cambiar del master a otra rama
+git merge + rama ----------------------------------Fuciona las ramas 
+git branch ----------------------------------------Muestra todas las ramas que existen en local
+git branch -r -------------------------------------Muestra las ramas en remoto en el servidor de github
+git branch -a -------------------------------------Muestra Todas las ramas
+git branch -d + 'rama' ----------------------------Borra una rama
+git log --all --graph --decorate --oneline --------Crea un una representcion grafica de todos los cambios
+git show-branch -----------------------------------Muestra cueles ramas existen y cual a sido su historia
+git show-branch --all -----------------------------Muestra lo mismo que la otra pero mas detallada
+gitk ----------------------------------------------Muestra muy graficamente al arbolito
+
+
+
+
+
+TAGS:
+git tag -a + 'nombre' + -m "mensaje" 469baee --Crea un tag
+git push origin --tags ------------------------Sube tags al master
+git tag -d + 'nombre' -------------------------Elimina un tag de git
+git push origin :refs/tags/'nombre' -----------Elimina el tag en GitHub
+
+
+
+
+
+GREP:
+var palabra = 'palabra que se esta buscando';
+git grep + 'palabra' -----------------------Muestra en que archivos estan las palabras
+git grep -n + 'palabra' --------------------Muestra la linea donde se encuentra la palabra
+git grep -c + 'palabra' --------------------Muestra la cantidad de veces que se uso
+git grep -c + "<p>" ------------------------Muestra la cantidad de veces que se uso una etiqueta lleva comillas ""
+git log -S "palabra" -----------------------Muestra las veces que se uso la palabra en los commits
+
+
+
+RECUPERAR:
+*PELIGRO* Mala practica
+git reflog ---------------------------------Aqui se ve TODO!
+git reset --HARD + 'hast del commit' -------Vuelven las cosas al commit seleccionado 
+
+
+
+REBASE:
+Es una mala practica, no deja historial, no se sabe quien hizo que.
+
+git rebase 'master' ---------------------------Desde la 'rama' que desea unir al master se egreada el comando ejemplo "desde el footer se ejecuta el comando"
+
+
+
+
+CONFIGURACIONES:
+git config ---------------------------------Encuentras todas las configuraciones de git
+git config --list --------------------------Muestra tu configuración y que te hace falta
+git config --global user.name "ivan" -------Genera cambios al usuario 
+                    user.email ".gmail.com"
+
+
+
+
+
+AVANZADOS:
+git config --list --show-origin -------------------Puedes ver donde estan las configuraciones guardadas 
+
+
+
+
+
+CRER UNA LLAVE SSH:
+ssh-keygen -t rsa -b 4096 -C "carlos.ivan10043@mail.com"
+eval $(ssh-agent -s)
+simbolo de ñ: ~
+cd ~/.ssh/
+
+
