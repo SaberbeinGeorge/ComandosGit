@@ -18,7 +18,10 @@ git pull origin master ---------------------Trae todos los cambios agregados des
 git push origin master ---------------------Envia tus archivos al master en github
 
 
-
+git checkout +(codigo commit)+ (archivo que se desea regresar) 
+ejemplo: git checkout 78jendfkfjhddofjffldjdmmckgj historia.txt 
+y para regresar :
+git checkout master historia.txt
 
 
 
@@ -53,16 +56,17 @@ git 'comando' --help -----------------------Muestra como funcin el comando en un
 
 EXTRAS:
 git log + archivo --------------------------Muestra todos los commits realizados al archivo
-git reset + version --soft -----------------Permite volver a una versión anterior
-                    --hard
+git reset + version --soft -----------------Permite volver a una versión anterior (Borramos todo el historial y los registros de Git pero guardamos los cambios que tengamos en Staging, así podemos aplicar las últimas actualizaciones a un nuevo commit.)
+                    --hard -----------------(Borra todo. Todo todito, absolutamente todo. Toda la información de los commits y del área de staging se borra del historial.)
 git diff + version1 + version2 -------------Se compara la versión 1 y 2 entre sí
 git checkout + master + archivo ------------Muestra cómo era el archivo el la versión señalada
 git checkout + version + archivo -----------Muestra cómo era el archivo el la versión señalada
-git rm --cached ----------------------------Se cancela la subida
+git rm --cached ----------------------------Se cancela la subida (Elimina los archivos de nuestro repositorio local y del área de staging,)
+git rm --force -----------------------------Elimina los archivos de Git y del disco duro. Git siempre guarda todo, por lo que podemos acceder al registro de la existencia de los archivos, de modo que podremos recuperarlos si es necesario (pero debemos usar comandos más avanzados).
 . ------------------------------------------Hace referencia a todas la carpeta
 code + archivo -----------------------------Se abre Visual Studio Code en el archivo marcado
 alias + VARIABLE="comando"------------------Genera variables con comandos para evitar escribir un mega codigo
-
+git reset HEAD------------------------------Este es el comando para sacar archivos del área de staging. No para borrarlos ni nada de eso, solo para que los últimos cambios de estos archivos no se envíen al último commit, a menos que cambiemos de opinión y los incluyamos de nuevo en staging con git add, por supuesto.
 
 
 
@@ -167,4 +171,3 @@ ssh-keygen -t rsa -b 4096 -C "carlos.ivan10043@mail.com"
 eval $(ssh-agent -s)
 simbolo de ñ: ~
 cd ~/.ssh/
-
