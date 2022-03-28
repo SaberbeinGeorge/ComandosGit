@@ -58,6 +58,7 @@ EXTRAS:
 git log + archivo --------------------------Muestra todos los commits realizados al archivo
 git reset + version --soft -----------------Permite volver a una versión anterior (Borramos todo el historial y los registros de Git pero guardamos los cambios que tengamos en Staging, así podemos aplicar las últimas actualizaciones a un nuevo commit.)
                     --hard -----------------(Borra todo. Todo todito, absolutamente todo. Toda la información de los commits y del área de staging se borra del historial.)
+git reset (hard,mixed y soft)---------------es un comando para moverse, dependiendo de que modo usemos eliminara(--hard), guardara en zona de no-monitoreada(--mixed) o zona monitoreada(--soft)
 git diff + version1 + version2 -------------Se compara la versión 1 y 2 entre sí
 git checkout + master + archivo ------------Muestra cómo era el archivo el la versión señalada
 git checkout + version + archivo -----------Muestra cómo era el archivo el la versión señalada
@@ -67,6 +68,7 @@ git rm --force -----------------------------Elimina los archivos de Git y del di
 code + archivo -----------------------------Se abre Visual Studio Code en el archivo marcado
 alias + VARIABLE="comando"------------------Genera variables con comandos para evitar escribir un mega codigo
 git reset HEAD------------------------------Este es el comando para sacar archivos del área de staging. No para borrarlos ni nada de eso, solo para que los últimos cambios de estos archivos no se envíen al último commit, a menos que cambiemos de opinión y los incluyamos de nuevo en staging con git add, por supuesto.
+
 
 
 
