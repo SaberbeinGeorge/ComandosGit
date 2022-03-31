@@ -115,6 +115,11 @@ git log --all --graph --decorate --oneline --------Crea un una representcion gra
 git show-branch -----------------------------------Muestra cueles ramas existen y cual a sido su historia
 git show-branch --all -----------------------------Muestra lo mismo que la otra pero mas detallada
 gitk ----------------------------------------------Muestra muy graficamente al arbolito
+git branch --no-merged-----------------------------Esto nos muestra la otra rama del proyecto. Debido a que contiene trabajos 
+---------------------------------------------------sin fusionar, al intentar borrarla con git branch -d, el comando nos dará un error
+git branch --merge --------------------------------muestra la lista de ramas fusionadas 
+ Nota: Si realmente deseas borrar la rama y perder el trabajo contenido en ella, puedes forzar el borrado con la opción -D; tal y como indica el mensaje de ayuda.
+ 
 
 
 
