@@ -68,7 +68,7 @@ git rm --force -----------------------------Elimina los archivos de Git y del di
 code + archivo -----------------------------Se abre Visual Studio Code en el archivo marcado
 alias + VARIABLE="comando"------------------Genera variables con comandos para evitar escribir un mega codigo
 git reset HEAD------------------------------Este es el comando para sacar archivos del área de staging. No para borrarlos ni nada de eso, solo para que los últimos cambios de estos archivos no se envíen al último commit, a menos que cambiemos de opinión y los incluyamos de nuevo en staging con git add, por supuesto.
-git commit -a -m " " -----------------------para agregar al staging y crear commit
+git commit -am " " -------------------------agrega al staging y crea el commit.
 
 CONSEPTOS IMPORTANTES A CONSIDERAR
 Nota: Directorio también se conoce como repositorio o en forma abreviada repo. 
