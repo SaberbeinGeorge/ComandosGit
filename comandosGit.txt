@@ -70,12 +70,24 @@ alias + VARIABLE="comando"------------------Genera variables con comandos para e
 git reset HEAD------------------------------Este es el comando para sacar archivos del área de staging. No para borrarlos ni nada de eso, solo para que los últimos cambios de estos archivos no se envíen al último commit, a menos que cambiemos de opinión y los incluyamos de nuevo en staging con git add, por supuesto.
 git commit -am " " -------------------------agrega al staging y crea el commit.
 
+git remote add origin "link HTTP" ----------comprobar con (git remote ="origin")(git remote -v =link[fetch], link[push])
+-----git pull origin main --allow-unrelated-histories----fusiona el git remoto con la rama local(se abre vim automaticamente,y confirmas)con esto ya trajo los archivos de mi git remoto al git local
+-------git push -u origin main------------------------------de esta manera terminamos de fusionar los archivos locales con los remotos
+
 CONSEPTOS IMPORTANTES A CONSIDERAR
 Nota: Directorio también se conoce como repositorio o en forma abreviada repo. 
 El repo en la máquina local del usuario se llama "Repo local" 
 mientras que el repo en el servidor git se llama "Repo remoto".
 
+Cómo revertir un merge
+Si nos hemos equivocado y queremos cancelar el merge, debemos usar el siguiente comando:
 
+git merge --abort
+
+Conflictos en repositorios remotos
+Al trabajar con otras personas, es necesario utilizar un repositorio remoto.
+­
+-Para copiar el repositorio remoto al directorio de trabajo local, se utiliza el comando git clone <url>, y para enviar cambios al repositorio remoto se utiliza git push
 
 CHERRY-PICK:
 Mala practica
