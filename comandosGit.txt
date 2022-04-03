@@ -90,18 +90,7 @@ Al trabajar con otras personas, es necesario utilizar un repositorio remoto.
 -Para copiar el repositorio remoto al directorio de trabajo local, se utiliza el comando git clone <url>, y para enviar cambios al repositorio remoto se utiliza git push
 
 
-COMO RECUPERAR SI ELIMINASTE POR ACCIDENTE TODO
-git reflog
-El método más rápido para conseguirlo suele ser utilizar una herramienta denominada git reflog.
-Según trabajas, Git suele guardar un silencioso registro de donde está HEAD en cada momento.
-Cada vez que confirmas cambios o cambias de rama, el registro (reflog) es actualizado. 
-El registro reflog se actualiza incluso cuando utilizas el comando git update-ref, 
-siendo ésta otra de las razones por las que es recomendable utilizar ese comando en lugar de escribir
- manualmente los valores SHA-1 en los archivos de referencia, tal y como hemos visto en Referencias Git.
-  Con el comando git reflog puedes revisar donde has estado en cualquier momento pasado:
-   *pasos:
-        git reflog
-        git branch ramaDeRecuperacion "hash"------- crea una rama con el hash que se desea recuperar.
+
 
 CHERRY-PICK:
 Mala practica
@@ -175,7 +164,18 @@ RECUPERAR:
 *PELIGRO* Mala practica
 git reflog ---------------------------------Aqui se ve TODO!
 git reset --HARD + 'hast del commit' -------Vuelven las cosas al commit seleccionado 
-
+COMO RECUPERAR SI ELIMINASTE POR ACCIDENTE TODO
+git reflog
+El método más rápido para conseguirlo suele ser utilizar una herramienta denominada git reflog.
+Según trabajas, Git suele guardar un silencioso registro de donde está HEAD en cada momento.
+Cada vez que confirmas cambios o cambias de rama, el registro (reflog) es actualizado. 
+El registro reflog se actualiza incluso cuando utilizas el comando git update-ref, 
+siendo ésta otra de las razones por las que es recomendable utilizar ese comando en lugar de escribir
+ manualmente los valores SHA-1 en los archivos de referencia, tal y como hemos visto en Referencias Git.
+  Con el comando git reflog puedes revisar donde has estado en cualquier momento pasado:
+   *pasos:
+        git reflog
+        git branch ramaDeRecuperacion "hash"------- crea una rama con el hash que se desea recuperar.
 
 
 REBASE:
