@@ -1,7 +1,7 @@
 NOTA: 
 El símbolo de "+" no va, solo lo pongo qué atributo se le agrega después
 
-prueba
+
 
 AFREGAR UN ARCHIVO A GIT:
 git init -----------------------------------Se activa el comienzo de subir la carpeta
