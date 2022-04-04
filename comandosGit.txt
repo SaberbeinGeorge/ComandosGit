@@ -70,9 +70,8 @@ alias + VARIABLE="comando"------------------Genera variables con comandos para e
 git reset HEAD------------------------------Este es el comando para sacar archivos del área de staging. No para borrarlos ni nada de eso, solo para que los últimos cambios de estos archivos no se envíen al último commit, a menos que cambiemos de opinión y los incluyamos de nuevo en staging con git add, por supuesto.
 git commit -am " " -------------------------agrega al staging y crea el commit.
 
-git remote add origin "link HTTP" ----------comprobar con (git remote ="origin")(git remote -v =link[fetch], link[push])
------git pull origin main --allow-unrelated-histories----fusiona el git remoto con la rama local(se abre vim automaticamente,y confirmas)con esto ya trajo los archivos de mi git remoto al git local
--------git push -u origin main------------------------------de esta manera terminamos de fusionar los archivos locales con los remotos
+
+-------------si no te funciona gitk-----ejecuta: gitk.exe . ------
 
 CONSEPTOS IMPORTANTES A CONSIDERAR
 Nota: Directorio también se conoce como repositorio o en forma abreviada repo. 
@@ -164,6 +163,7 @@ RECUPERAR:
 *PELIGRO* Mala practica
 git reflog ---------------------------------Aqui se ve TODO!
 git reset --HARD + 'hast del commit' -------Vuelven las cosas al commit seleccionado 
+
 COMO RECUPERAR SI ELIMINASTE POR ACCIDENTE TODO
 git reflog
 El método más rápido para conseguirlo suele ser utilizar una herramienta denominada git reflog.
@@ -203,8 +203,22 @@ git config --list --show-origin -------------------Puedes ver donde estan las co
 
 
 
-CRER UNA LLAVE SSH:
-ssh-keygen -t rsa -b 4096 -C "carlos.ivan10043@mail.com"
-eval $(ssh-agent -s)
+CRER UNA LLAVE SSH EN LOCAL:
+1. ssh-keygen -t rsa -b 4096 -C "carlos.ivan10043@mail.com"------------Generacion de claves de cifrado publica y privada
+   (segunda opcion)ssh-keygen -t ed25519 -C "your_email@example.com"(segunda opcion en caso de que no funcione la primera)-------
+2. eval $(ssh-agent -s)-------------------Comprueba si el servicio de cifrado esta activo
+3. ssh-add ~/.ssh/(llave publica o privada)-----------informa al sistema de la ubicacion del archivo que contiene la llave privada
 simbolo de ñ: ~
 cd ~/.ssh/
+
+*CONECCION A GITHUB CON SSH*
+git remote set-url origin <ssh-url>------configura a git para conectar con el repositorio remoto a traves de SSH(en lugar de HTTPS)
+git remote -v -----------------verifica la existencia del origen remoto
+git config -l -----------------permite ver los parametros de la configuracion y sus valores
+
+
+
+*PRECAUCION*(coneccion a github con http)
+git remote add origin "link HTTP" ----------comprobar con (git remote ="origin")(git remote -v =link[fetch], link[push])
+-----git pull origin main --allow-unrelated-histories----fusiona el git remoto con la rama local(se abre vim automaticamente,y confirmas)con esto ya trajo los archivos de mi git remoto al git local
+-------git push -u origin main------------------------------de esta manera terminamos de fusionar los archivos locales con los remotos
