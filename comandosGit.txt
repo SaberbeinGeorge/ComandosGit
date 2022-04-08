@@ -133,6 +133,8 @@ git branch --no-merged-----------------------------Esto nos muestra la otra rama
 ---------------------------------------------------sin fusionar, al intentar borrarla con git branch -d, el comando nos dará un error
 git branch --merge --------------------------------muestra la lista de ramas fusionadas 
  Nota: Si realmente deseas borrar la rama y perder el trabajo contenido en ella, puedes forzar el borrado con la opción -D; tal y como indica el mensaje de ayuda.
+      al hacer merge si te abre la consola de vim, se puede cerrar con esc+shift+z+z
+ git pull origin "rama"----------------------------Trae la rama del repositorio remoto del proyecto.
  
 
 
@@ -222,3 +224,6 @@ git config -l -----------------permite ver los parametros de la configuracion y 
 git remote add origin "link HTTP" ----------comprobar con (git remote ="origin")(git remote -v =link[fetch], link[push])
 -----git pull origin main --allow-unrelated-histories----fusiona el git remoto con la rama local(se abre vim automaticamente,y confirmas)con esto ya trajo los archivos de mi git remoto al git local
 -------git push -u origin main------------------------------de esta manera terminamos de fusionar los archivos locales con los remotos
+
+ALGUNOS comandos
+rename 's/terminal/gitGitHub/' * --------------------------renombrar un archivo o carpeta de tu terminal
