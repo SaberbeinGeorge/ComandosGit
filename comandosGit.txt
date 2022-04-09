@@ -1,20 +1,20 @@
 NOTA: 
-El símbolo de "+" no va, solo lo pongo qué atributo se le agrega después
--------------si no te funciona gitk-----ejecuta: gitk.exe . ------
-git clone "url ssh o http"----:
+     El símbolo de "+" no va, solo lo pongo qué atributo se le agrega después
+     -------------si no te funciona gitk-----ejecuta: gitk.exe . ------
+     git clone "url ssh o http"----:
      Clonando un repositorio remoto-------Al clonar un repositorio remoto solo se clonara la rama master podemos hacer pull(si el repo es publico)
                                    ___pero al no ser agregado como contribuidor no podremos hacer push____
 
 
 CONSEPTOS IMPORTANTES A CONSIDERAR Y APUNTES RAPIDOS
-Nota: Directorio también se conoce como repositorio o en forma abreviada repo. 
-     El repo en la máquina local del usuario se llama "Repo local" 
-     mientras que el repo en el servidor git se llama "Repo remoto".
+     Nota: Directorio también se conoce como repositorio o en forma abreviada repo. 
+          El repo en la máquina local del usuario se llama "Repo local" 
+          mientras que el repo en el servidor git se llama "Repo remoto".
 
-git merge --abort ---------------Cómo revertir un merge Si nos hemos equivocado y queremos cancelar el merge
+     git merge --abort ---------------Cómo revertir un merge Si nos hemos equivocado y queremos cancelar el merge
 
--Para copiar el repositorio remoto al directorio de trabajo local, 
-     se utiliza el comando "git clone <url>", y para enviar cambios al repositorio remoto se utiliza git push
+     -Para copiar el repositorio remoto al directorio de trabajo local, 
+          se utiliza el comando "git clone <url>", y para enviar cambios al repositorio remoto se utiliza git push
 
 
 AFREGAR UN ARCHIVO A GIT:
@@ -32,22 +32,22 @@ USO DE GITHUB
      git push origin master ---------------------Envia tus archivos al master en github
 
      Cómo conectar un repositorio de Github a nuestro documento local
-Si queremos conectar el repositorio de GitHub con nuestro repositorio local, que creamos usando el comando git init, debemos ejecutar las siguientes instrucciones:
+     Si queremos conectar el repositorio de GitHub con nuestro repositorio local, que creamos usando el comando git init, debemos ejecutar las siguientes instrucciones:
 
-PGuardar la URL del repositorio de GitHub con el nombre de origin
----git remote add origin URL
-Verificar que la URL se haya guardado correctamente:
----git remote
----git remote -v
-Traer la versión del repositorio remoto y hacer merge para crear un commit con los archivos de ambas partes. Podemos usar git fetch y git merge o solo git pull con el flag --allow-unrelated-histories:
-----git pull origin master --allow-unrelated-histories
-Por último, ahora sí podemos hacer git push para guardar los cambios de nuestro repositorio local en GitHub:
------git push origin master
+     PGuardar la URL del repositorio de GitHub con el nombre de origin
+     ---git remote add origin URL
+     Verificar que la URL se haya guardado correctamente:
+     ---git remote
+     ---git remote -v
+     Traer la versión del repositorio remoto y hacer merge para crear un commit con los archivos de ambas partes. Podemos usar git fetch y git merge o solo git pull con el flag --allow-unrelated-histories:
+     ----git pull origin master --allow-unrelated-histories
+     Por último, ahora sí podemos hacer git push para guardar los cambios de nuestro repositorio local en GitHub:
+     -----git push origin master
 
      *PRECAUCION*(coneccion a github con http)
-git remote add origin "link HTTP" ----------comprobar con (git remote ="origin")(git remote -v =link[fetch], link[push])
------git pull origin main --allow-unrelated-histories----fusiona el git remoto con la rama local(se abre vim automaticamente,y confirmas)con esto ya trajo los archivos de mi git remoto al git local
--------git push -u origin main------------------------------de esta manera terminamos de fusionar los archivos locales con los remotos
+     git remote add origin "link HTTP" ----------comprobar con (git remote ="origin")(git remote -v =link[fetch], link[push])
+     -----git pull origin main --allow-unrelated-histories----fusiona el git remoto con la rama local(se abre vim automaticamente,y confirmas)con esto ya trajo los archivos de mi git remoto al git local
+     -------git push -u origin main------------------------------de esta manera terminamos de fusionar los archivos locales con los remotos
 
 MOVIENDOSE A UN COMMIT DETERMINADO
      git checkout +(codigo commit)+ (archivo que se desea regresar) 
@@ -151,7 +151,7 @@ RAMAS:
      git branch --no-merged-----------------------------Esto nos muestra la otra rama del proyecto. Debido a que contiene trabajos 
      ---------------------------------------------------sin fusionar, al intentar borrarla con git branch -d, el comando nos dará un error
      git branch --merge --------------------------------muestra la lista de ramas fusionadas 
-      Nota: Si realmente deseas borrar la rama y perder el trabajo contenido en ella, puedes forzar el borrado con la opción -D; tal y como indica el mensaje de ayuda.
+          Nota: Si realmente deseas borrar la rama y perder el trabajo contenido en ella, puedes forzar el borrado con la opción -D; tal y como indica el mensaje de ayuda.
                al hacer merge si te abre la consola de vim, se puede cerrar con esc+shift+z+z
      git pull origin "rama"----------------------------Trae la rama del repositorio remoto del proyecto.
  
@@ -186,14 +186,14 @@ RECUPERAR:
      git reset --HARD + 'hast del commit' -------Vuelven las cosas al commit seleccionado 
 
 COMO RECUPERAR SI ELIMINASTE POR ACCIDENTE TODO
-git reflog
-     El método más rápido para conseguirlo suele ser utilizar una herramienta denominada git reflog.
-     Según trabajas, Git suele guardar un silencioso registro de donde está HEAD en cada momento.
-     Cada vez que confirmas cambios o cambias de rama, el registro (reflog) es actualizado. 
-     El registro reflog se actualiza incluso cuando utilizas el comando git update-ref, 
-     siendo ésta otra de las razones por las que es recomendable utilizar ese comando en lugar de escribir
-     manualmente los valores SHA-1 en los archivos de referencia, tal y como hemos visto en Referencias Git.
-     Con el comando git reflog puedes revisar donde has estado en cualquier momento pasado:
+     git reflog
+          El método más rápido para conseguirlo suele ser utilizar una herramienta denominada git reflog.
+          Según trabajas, Git suele guardar un silencioso registro de donde está HEAD en cada momento.
+          Cada vez que confirmas cambios o cambias de rama, el registro (reflog) es actualizado. 
+          El registro reflog se actualiza incluso cuando utilizas el comando git update-ref, 
+          siendo ésta otra de las razones por las que es recomendable utilizar ese comando en lugar de escribir
+          manualmente los valores SHA-1 en los archivos de referencia, tal y como hemos visto en Referencias Git.
+          Con el comando git reflog puedes revisar donde has estado en cualquier momento pasado:
      *pasos:
         git reflog
         git branch ramaDeRecuperacion "hash"------- crea una rama con el hash que se desea recuperar.
@@ -218,28 +218,28 @@ CONFIGURACIONES:
 
 
 AVANZADOS:
-git config --list --show-origin -------------------Puedes ver donde estan las configuraciones guardadas 
+     git config --list --show-origin -------------------Puedes ver donde estan las configuraciones guardadas 
 
 
 
 
 
 CRER UNA LLAVE SSH EN LOCAL:
-1. ssh-keygen -t rsa -b 4096 -C "carlos.ivan10043@mail.com"------------Generacion de claves de cifrado publica y privada
-   (segunda opcion)ssh-keygen -t ed25519 -C "your_email@example.com"(segunda opcion en caso de que no funcione la primera)-------
-2. eval $(ssh-agent -s)-------------------Comprueba si el servicio de cifrado esta activo
-3. ssh-add ~/.ssh/(llave publica o privada)-----------informa al sistema de la ubicacion del archivo que contiene la llave privada
-simbolo de ñ: ~
-cd ~/.ssh/
+     1. ssh-keygen -t rsa -b 4096 -C "carlos.ivan10043@mail.com"------------Generacion de claves de cifrado publica y privada
+        (segunda opcion)ssh-keygen -t ed25519 -C "your_email@example.com"(segunda opcion en caso de que no funcione la primera)-------
+     2. eval $(ssh-agent -s)-------------------Comprueba si el servicio de cifrado esta activo
+     3. ssh-add ~/.ssh/(llave publica o privada)-----------informa al sistema de la ubicacion del archivo que contiene la llave privada
+     simbolo de ñ: ~
+     cd ~/.ssh/
 
 *CONECCION A GITHUB CON SSH*
-git remote set-url origin <ssh-url>------configura a git para conectar con el repositorio remoto a traves de SSH(en lugar de HTTPS)
-git remote -v -----------------verifica la existencia del origen remoto
-git config -l -----------------permite ver los parametros de la configuracion y sus valores
+     git remote set-url origin <ssh-url>------configura a git para conectar con el repositorio remoto a traves de SSH(en lugar de HTTPS)
+     git remote -v -----------------verifica la existencia del origen remoto
+     git config -l -----------------permite ver los parametros de la configuracion y sus valores
 
 
 
 
 
 ALGUNOS comandos
-rename 's/terminal/gitGitHub/' * --------------------------renombrar un archivo o carpeta de tu terminal
+     rename 's/terminal/gitGitHub/' * --------------------------renombrar un archivo o carpeta de tu terminal
