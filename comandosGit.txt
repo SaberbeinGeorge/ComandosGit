@@ -21,7 +21,7 @@ AFREGAR UN ARCHIVO A GIT:
      git init -----------------------------------Se activa el comienzo de subir la carpeta
      git add + archivo --------------------------Agrega al documento
      git commit -m "mensaje" --------------------Se agrega un mensaje sobre lo que se cambio (obligatorio)
-
+     git commit -am "mensaje"--------------------sirve para hacer un add y crear el commit, (solo se puede usar con archivos que ya usaron add)por ende si creas un archivo nuevo no funcionara.
      git add + archivo
      git commit --amend -------------------------sirve para evitar crear otro commit y utilizar el anterior
 
@@ -44,9 +44,9 @@ USO DE GITHUB
      Por último, ahora sí podemos hacer git push para guardar los cambios de nuestro repositorio local en GitHub:
      -----git push origin master
 
-     *PRECAUCION*(coneccion a github con http)
+     *PRECAUCION*(coneccion a github con http o ssh {mas informacion CLASE 19 Curso profesional de git y github})
      git remote add origin "link HTTP" ----------comprobar con (git remote ="origin")(git remote -v =link[fetch], link[push])
-     -----git pull origin main --allow-unrelated-histories----fusiona el git remoto con la rama local(se abre vim automaticamente,y confirmas)con esto ya trajo los archivos de mi git remoto al git local
+     -----git pull origin main --allow-unrelated-histories----(fuerza a traer los archivos de github a tu repositorio local)fusiona el git remoto con la rama local(se abre vim automaticamente,y confirmas)con esto ya trajo los archivos de mi git remoto al git local
      -------git push -u origin main------------------------------de esta manera terminamos de fusionar los archivos locales con los remotos
 
 MOVIENDOSE A UN COMMIT DETERMINADO
@@ -98,13 +98,19 @@ EXTRAS:
      git rm --force -----------------------------Elimina los archivos de Git y del disco duro. Git siempre guarda todo, por lo que podemos acceder al registro de la existencia de los archivos, de modo que podremos recuperarlos si es necesario (pero debemos usar comandos más avanzados).
      . ------------------------------------------Hace referencia a todas la carpeta
      code + archivo -----------------------------Se abre Visual Studio Code en el archivo marcado
-     alias + VARIABLE="comando"------------------Genera variables con comandos para evitar escribir un mega codigo
+     alias + VARIABLE="nombreDeComando"----------Genera variables con comandos para evitar escribir un mega codigo
      git reset HEAD------------------------------Este es el comando para sacar archivos del área de staging. No para borrarlos ni nada de eso, solo para que los últimos cambios de estos archivos no se envíen al último commit, a menos que cambiemos de opinión y los incluyamos de nuevo en staging con git add, por supuesto.
      git commit -am " " -------------------------agrega al staging y crea el commit.
 
 
-
-
+FORK
+ 1- clonamos el repositorio en Github simplemente precionando el boton de Fork.
+ 2-En el repositorio local crearemos una fuente distinta al de origin{
+     git remote add upstream "link clone ssh o http"----------esto crea un apuntador directo al repositorio GitHub del proyecto que
+     queremos colaborar(llamo colaborar porque esto es en caso de que no estes agregado como contribuidor) de esta manera mantendremos
+     actualizado nuestro proyecto con el proyecto que le hicimos el fork podria ayudar a evitar conflictos:
+     git pull upstream + rama -----------traera las actualizaciones del proyecto que le hicimos fork al principio.}
+ 3-git push origin main------actualizamos nuestro repositorio remoto.
 
 
 
