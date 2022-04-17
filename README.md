@@ -4,6 +4,6 @@ En este repositorio podrás encontrar Comandos Git que te serán útiles en el d
 
 Para visualizarlo puedes darle click [aqui](./comandosGit.txt).
 
-*ESTUVO AQUI:* :tw-1f4bb:
+*ESTUVO AQUI:* twemoji-1f4bb
 - CIOG 
 - George:tw-1f303:
