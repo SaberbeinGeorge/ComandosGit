@@ -115,13 +115,36 @@ FORK
 
 README.md
  https://pandao.github.io/editor.md/en.html -----------------pagina para editar tu archivo README.md
+     no recomendado para insertar emojins, si desea insertar emojins acceda a este link
+          https://github.com/SaberbeinGeorge/emoji-cheat-sheet
 
 CHERRY-PICK:
-     Mala practica
-     git cherry-PICK 'hash del cambio'-----------Trae un commit especifico de un lado
+Mala practica
+Nota: Existe un mundo alternativo en el cual vamos avanzando en una rama pero necesitamos
+      en master uno de esos avances de la rama, para eso utilizamos el comando git cherry-pick IDCommit.
+      cherry-pick es una mala práctica porque significa que estamos reconstruyendo la historia, usa cherry-pick con sabiduría. Si no sabes lo que estás haciendo ten mucho cuidado.
+     
+     git cherry-PICK + IDCommit -----------Trae un commit especifico de una rama
+           (no registra en la historia el uso de cherry-pick solo registrara como la 
+           creacion de un commit en la rama donde fue traido el commit)
 
-
-
+AMMEND:
+     git commit --amend
+          A veces hacemos un commit, pero resulta que no queríamos mandarlo porque faltaba algo más. Utilizamos
+          git commit --amend, amend en inglés es remendar y lo que hará es que los cambios que hicimos nos los agregará al commit anterior.
+     
+     NOTA: el commit --amend es muy util, pero hay que tener cuidado en algunos casos, como en el caso de que el commit que quieras enmendar 
+     lo hayas pusheado al repositorio remoto, entonces quieras enmendar un commit que esta en remoto.
+     Así como en el caso de cherry-pick y rebase, hay que usarlo con cuidado porque modificará la historia de tu repositorio.
+     Digamos que haces un cambio al archivo a.txt y haces un commit.
+     Luego subes ese commit al repositorio haciendo push.
+     Pero se te olvido agregar cambios a ese commit y quieres enmendarlo.
+     Haces un git --amend y en la historia de tu repositorio local, pareciera que no ha pasado nada: enmendaste tu commit.
+     Pero resulta que en el repositorio remoto eso no ha ocurrido, ese git --amend no tuvo lugar en el repositorio remoto,
+     y al hacer git status te mostrará un error así:
+     "Your branch and 'origin/master' have diverged,
+     and have 1 and 1 different commits each, respectively.
+     (use "git pull" to merge the remote branch into yours)"
 
 
 CLEAN:
