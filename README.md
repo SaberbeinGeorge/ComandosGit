@@ -6,4 +6,4 @@ Para visualizarlo puedes darle click [aqui](./comandosGit.txt).
 
 *ESTUVO AQUI:* twemoji-1f4bb
 - CIOG 
-- George:tw-1f303:
+- George:grinning:
