@@ -34,15 +34,15 @@ USO DE GITHUB
      Cómo conectar un repositorio de Github a nuestro documento local
      Si queremos conectar el repositorio de GitHub con nuestro repositorio local, que creamos usando el comando git init, debemos ejecutar las siguientes instrucciones:
 
-     PGuardar la URL del repositorio de GitHub con el nombre de origin
+     Guardar la URL del repositorio de GitHub con el nombre de origin
      ---git remote add origin URL
      Verificar que la URL se haya guardado correctamente:
      ---git remote
      ---git remote -v
      Traer la versión del repositorio remoto y hacer merge para crear un commit con los archivos de ambas partes. Podemos usar git fetch y git merge o solo git pull con el flag --allow-unrelated-histories:
-     ----git pull origin master --allow-unrelated-histories
+     ----git pull origin main --allow-unrelated-histories
      Por último, ahora sí podemos hacer git push para guardar los cambios de nuestro repositorio local en GitHub:
-     -----git push origin master
+     -----git push origin main
 
      *PRECAUCION*(coneccion a github con http o ssh {mas informacion CLASE 19 Curso profesional de git y github})
      git remote add origin "link HTTP" ----------comprobar con (git remote ="origin")(git remote -v =link[fetch], link[push])
@@ -53,7 +53,7 @@ MOVIENDOSE A UN COMMIT DETERMINADO
      git checkout +(codigo commit)+ (archivo que se desea regresar) 
      ejemplo: git checkout 78jendfkfjhddofjffldjdmmckgj historia.txt 
      y para regresar :
-     git checkout master historia.txt
+     git checkout main historia.txt
 
 
 
@@ -219,13 +219,30 @@ TAGS:
 
 
 GREP:
-     var palabra = 'palabra que se esta buscando';
+  A medida que nuestro proyecto se hace grande vamos a querer buscar ciertas cosas.
+  Por ejemplo: ¿cuántas veces en nuestro proyecto utilizamos la palabra color?
+  Para buscar utilizamos el comando git grep color y nos buscará en todo el proyecto 
+  los archivos en donde está la palabra color.
+
      git grep + 'palabra' -----------------------Muestra en que archivos estan las palabras
      git grep -n + 'palabra' --------------------Muestra la linea donde se encuentra la palabra
      git grep -c + 'palabra' --------------------Muestra la cantidad de veces que se uso
      git grep -c + "<p>" ------------------------Muestra la cantidad de veces que se uso una etiqueta lleva comillas ""
      git log -S "palabra" -----------------------Muestra las veces que se uso la palabra en los commits
+     Ejemplos :
+          git grep color -->use la palabra color
+          git grep la --> donde use la palabra la
+          git grep -n color–> en que lineas use la palabra color
+          git grep -n platzi --> en que lineas use la palabra platzi
+          git grep -c la --> cuantas veces use la palabra la
+          git grep -c paltzi --> cuantas veces use la palabra platzi
+          git grep -c “<p>”–> cuantas veces use la etiqueta <p>
 
+          git log-S “cabecera” --> cuantas veces use la palabra cabecera en
+          todos los commits.
+
+          grep–> para los archivos
+          log --> para los commits.
 
 
 RECUPERAR:
@@ -234,7 +251,7 @@ RECUPERAR:
      git reset --HARD + 'hast del commit' -------Vuelven las cosas al commit seleccionado 
 
 
-
+REFLOG
 COMO RECUPERAR SI ELIMINASTE POR ACCIDENTE TODO
      git reflog
           El método más rápido para conseguirlo suele ser utilizar una herramienta denominada git reflog.
@@ -247,7 +264,9 @@ COMO RECUPERAR SI ELIMINASTE POR ACCIDENTE TODO
      *pasos:
         git reflog
         git branch ramaDeRecuperacion "hash"------- crea una rama con el hash que se desea recuperar.
-
+     *otraOpcion:
+        git reflog
+        git reset --hard + "hash"--------------regresa al hash indicado borrando todo lo que esta entre tu ultimo commit y el hash donde quieres regresar
 
 REBASE:
      rebase reescribe la historia del repositorio, cambia la historia de 
@@ -290,8 +309,15 @@ CRER UNA LLAVE SSH EN LOCAL:
      git config -l -----------------permite ver los parametros de la configuracion y sus valores
 
 
-
-
-
 ALGUNOS comandos
      rename 's/terminal/gitGitHub/' * --------------------------renombrar un archivo o carpeta de tu terminal
+
+Comandos y recursos colaborativos en Git y GitHub
+     git shortlog -sn = muestra cuantos commit han hecho cada miembros del equipo.
+     git shortlog -sn --all = muestra cuantos commit han hecho cada miembros del equipo hasta los que han sido eliminado
+     git shortlog -sn --all --no-merge = muestra cuantos commit han hecho cada miembros quitando los eliminados sin los merges
+     git blame ARCHIVO = muestra quien hizo cada cosa linea por linea
+     git COMANDO --help = muestra como funciona el comando.
+     git blame ARCHIVO -Llinea_inicial,linea_final= muestra quien hizo cada cosa linea por linea indicándole desde que linea ver ejemplo -L35,50
+     **git branch -r **= se muestran todas las ramas remotas
+     git branch -a = se muestran todas las ramas tanto locales como remotas
